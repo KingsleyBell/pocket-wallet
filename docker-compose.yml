@@ -1,7 +1,7 @@
 version: '3'
 services:
-  pcoket_wallet_web:
-    container_name: pcoket_wallet_web
+  pocket_wallet_web:
+    container_name: pocket_wallet_web
     build: ./
     hostname: web
     ports:
