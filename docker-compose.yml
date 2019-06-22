@@ -1,11 +1,11 @@
 version: '3'
 services:
-  paul_web:
-    container_name: paul_web
+  pcoket_wallet_web:
+    container_name: pcoket_wallet_web
     build: ./
     hostname: web
     ports:
-      - "8001:8001"80
+      - "8002:8002"
     volumes:
       - /home/ubuntu/tick.log:/app/tick.log
     env_file:
