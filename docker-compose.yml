@@ -8,8 +8,6 @@ services:
       - "8002:8002"
     volumes:
       - /home/ubuntu/tick.log:/app/tick.log
-    env_file:
-      - "envfile"
 networks:
   default:
     external:
