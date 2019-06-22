@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Blue Wallet",
+    "id": "blue_wallet",
+    "colour": "#667bb0",
+    "colour_name": "blue",
+    "images": [
+        "blue_wallet/wallet.jpg",
+        "blue_wallet/wallet2.jpg"
+    ]
+  },
+  {
+    "name": "Red Wallet",
+    "id": "red_wallet",
+    "colour": "#d35d51",
+    "colour_name": "red",
+    "images": [
+        "red_wallet/wallet_b.jpg",
+        "red_wallet/wallet_b2.jpg"
+    ]
+  },
+  {
+    "name": "Grey Wallet",
+    "id": "grey_wallet",
+    "colour": "#cac9c5",
+    "colour_name": "grey",
+    "images": [
+        "grey_wallet/wallet_c.jpg",
+        "grey_wallet/wallet_c2.jpg"
+    ]
+  }
+]

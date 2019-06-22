@@ -1,0 +1,16 @@
+version: '3'
+services:
+  paul_web:
+    container_name: paul_web
+    build: ./
+    hostname: web
+    ports:
+      - "8001:8001"80
+    volumes:
+      - /home/ubuntu/tick.log:/app/tick.log
+    env_file:
+      - "envfile"
+networks:
+  default:
+    external:
+      name: websites
