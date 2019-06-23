@@ -119,10 +119,24 @@
         </div>
       {% endfor %}
       <div class="row section" id="section-about">
-        <div class="col-md-12">
-          {% for n in range(1000) %}
-            pocket wallet
-          {% endfor %}
+        <div class="col-md-12 border border-warning" style="height: 80vh;">
+          <h5 class="middle-middle">
+            Made in Cape Town, South Africa
+               <img class="pl-1 pb-1"
+                    style="height: 2rem; opacity: 0.8;"
+                    src="{{ url_for('static', filename='img/flag.png') }}"
+                    alt="First slide">
+            <br><br>
+            Pocket Wallets are laser cut from recycled tarpaulin material,
+            and assembled by hand :)
+            <br><br><br>
+            <a href="mailto:hello@pocketwallet.co.za"
+               style="text-decoration: none;"
+               class="text-warning"
+               target="_blank">
+              hello@pocketwallet.co.za
+            </a>
+          </h5>
         </div>
       </div>
     </main>
