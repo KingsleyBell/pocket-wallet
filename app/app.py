@@ -17,5 +17,32 @@ def home():
     )
 
 
+@application.route('/order-cancelled/')
+def order_cancelled():
+    order_status_message = (
+        "Order successfully cancelled."
+        "<br><br>"
+        "Navigate back to store to continue shopping."
+    )
+    return render_template(
+        'order_status.html',
+        order_status_message=order_status_message
+    )
+
+
+@application.route('/order-complete/')
+def order_complete():
+    order_status_message = (
+        "Thank you for your order!"
+        "<br><br>"
+        "You will receive details via email, "
+        "and your package will be shipped within the next 48 hours :)"
+    )
+    return render_template(
+        'order_status.html',
+        order_status_message=order_status_message
+    )
+
+
 if __name__ == "__main__":
     application.run(host='0.0.0.0', port=800)
