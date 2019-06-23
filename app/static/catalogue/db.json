@@ -1,32 +1,22 @@
 [
   {
-    "name": "Blue Wallet",
-    "id": "blue_wallet",
-    "colour": "#667bb0",
-    "colour_name": "blue",
+    "name": "Yellow Wallet",
+    "id": "yellow_wallet",
+    "colour": "#e7a80d",
+    "colour_name": "yellow",
     "images": [
-        "blue_wallet/wallet.jpg",
-        "blue_wallet/wallet2.jpg"
-    ]
-  },
-  {
-    "name": "Red Wallet",
-    "id": "red_wallet",
-    "colour": "#d35d51",
-    "colour_name": "red",
-    "images": [
-        "red_wallet/wallet_b.jpg",
-        "red_wallet/wallet_b2.jpg"
+        "yellow_wallet/yellow_closed.png",
+        "yellow_wallet/yellow_open.png"
     ]
   },
   {
     "name": "Grey Wallet",
     "id": "grey_wallet",
-    "colour": "#cac9c5",
+    "colour": "#676156",
     "colour_name": "grey",
     "images": [
-        "grey_wallet/wallet_c.jpg",
-        "grey_wallet/wallet_c2.jpg"
+        "grey_wallet/grey_closed.png",
+        "grey_wallet/grey_open.png"
     ]
   }
 ]
