@@ -25,9 +25,13 @@ $(document).ready(function() {
   $("select[name='os0']").change(function(e) {
     var val = $(this).find(":selected").val();
     if (val === "Inscribed") {
+      $("input[name='os1']").show();
+      $(".inscription-div").show();
       $("input[name='os1']").prop("required", true);
     }
     else {
+      $("input[name='os1']").hide();
+      $(".inscription-div").hide();
       $("input[name='os1']").prop("required", false);
     }
   });

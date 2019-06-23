@@ -101,13 +101,15 @@
             <form class="needs-validation" novalidate action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input type="hidden" name="cmd" value="_s-xclick">
               <input type="hidden" name="hosted_button_id" value="36QZXJW9M9XN4">
-              <select name="os0" class="form-control form-control-sm buy-form">
-                <option value="Inscribed">Inscribed $35.00 USD</option>
-                <option value="Not Inscribed">Not Inscribed $30.00 USD</option>
+              <select name="os0" class="form-control form-control-sm buy-form mb-1">
+                <option class="buy-form" value="Inscribed">Inscribed $35.00 USD</option>
+                <option class="buy-form" value="Not Inscribed">Not Inscribed $30.00 USD</option>
               </select>
-              <input type="text" name="os1" class="form-control form-control-sm buy-form my-1" placeholder="Inscription" maxlength="1" required>
-              <div class="invalid-feedback py-2">
-                Please choose an inscription (1 character only)
+              <div class="inscription-div">
+                <input type="text" name="os1" class="form-control form-control-sm buy-form mb-1" placeholder="Inscription" maxlength="1" required>
+                <div class="invalid-feedback py-2">
+                  Please choose an inscription (1 character only)
+                </div>
               </div>
               <input type="hidden" name="os2" value="{{ link.colour_name }}">
               <input type="hidden" name="currency_code" value="USD">
