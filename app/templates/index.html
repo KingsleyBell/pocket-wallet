@@ -31,15 +31,27 @@
 </head>
 
 <body>
-<div class="container-fluid mt-5">
+<div class="container-fluid my-5">
   <div class="row">
     <nav class="col-md-2 sidebar navbar navbar-expand-lg navbar-light pl-4" id="home-nav">
       <div class="sidebar-sticky">
-        <h3 class="site-heading" style="position: relative">
-          POCKET<br>
-          WALLET
-        </h3>
-        <div class="navbar-options">
+        <a href="#" id="home-link">
+          <h3 class="site-heading" style="position: relative">
+            POCKET<br>
+            WALLET
+          </h3>
+        </a>
+        <div class="navbar-toggler pull-right border-0 text-dark"
+             data-toggle="collapse"
+             data-target="#navbarNavDropdown"
+             aria-controls="navbarNavDropdown"
+             aria-expanded="false"
+             aria-label="Toggle navigation"
+             style="position: absolute; top: 0; right: 0;"
+        >
+          <i class="fa fa-bars" style="font-size: 2rem;"></i>
+        </div>
+        <div class="collapse navbar-collapse navbar-options" id="navbarNavDropdown">
           <ul class="nav flex-column colour-list">
             <li class="nav-item">
               {% for link in links %}
@@ -51,7 +63,7 @@
               {% endfor %}
             </li>
             <li class="nav-item">
-                <span class="nav-link text-secondary py-0 pl-0" id="nav-about">
+                <span class="nav-link text-secondary pl-0" id="nav-about">
                   About
                 </span>
               </li>
@@ -89,27 +101,32 @@
             <form class="needs-validation" novalidate action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input type="hidden" name="cmd" value="_s-xclick">
               <input type="hidden" name="hosted_button_id" value="36QZXJW9M9XN4">
-              <select name="os0" class="form-control form-control-sm">
+              <select name="os0" class="form-control form-control-sm buy-form">
                 <option value="Inscribed">Inscribed $35.00 USD</option>
                 <option value="Not Inscribed">Not Inscribed $30.00 USD</option>
               </select>
-              <input type="text" name="os1" class="form-control form-control-sm my-1" placeholder="Inscription" maxlength="1" required>
+              <input type="text" name="os1" class="form-control form-control-sm buy-form my-1" placeholder="Inscription" maxlength="1" required>
               <div class="invalid-feedback py-2">
                 Please choose an inscription (1 character only)
               </div>
               <input type="hidden" name="os2" value="{{ link.colour_name }}">
               <input type="hidden" name="currency_code" value="USD">
-              <button type="submit" class="btn btn-dark btn-sm button-link" disabled>BUY NOW</button>
+              <button type="submit" class="btn btn-dark btn-sm button-link pull-right" disabled>BUY NOW</button>
             </form>
           </div>
         </div>
       {% endfor %}
       <div class="row section" id="section-about">
-        {% for n in range(1000) %}
-          pocket wallet
-        {% endfor %}
+        <div class="col-md-12">
+          {% for n in range(1000) %}
+            pocket wallet
+          {% endfor %}
+        </div>
       </div>
     </main>
+    <div class="footer">
+      © 2019 PocketWallet
+    </div>
   </div>
 </div>
 

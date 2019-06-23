@@ -1,6 +1,11 @@
 $(document).ready(function() {
   $(".button-link").prop("disabled", false);
 
+  $("#home-link").click(function(e) {
+    e.preventDefault();
+    $(".nav-link")[0].click();
+  });
+
   $(".nav-link").click(function(e) {
     var targetId = e.target.id.split('-'),
     linkId = targetId[targetId.length - 1];
