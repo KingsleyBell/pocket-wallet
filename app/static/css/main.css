@@ -1,7 +1,7 @@
 body {
     font-family: helvetica-w01-light,helvetica-w02-light,sans-serif;
     font-size: 12px;
-    background-color: #f7f796;
+    background-color: #f8f9fa;
 }
 
 .footer {
@@ -123,6 +123,6 @@ body {
     opacity: 0.15;
     line-height: 4em;
     letter-spacing: 2px;
-    color: #444;
+    color: #d0d0d0;
     z-index:-1;
 }
