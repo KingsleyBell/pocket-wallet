@@ -13,7 +13,19 @@ def home():
     db = json.loads(open(db_path, 'r').read())
     return render_template(
         'index.html',
-        links=db
+        links=db,
+        promo=False
+    )
+
+
+@application.route('/promo/')
+def promo():
+    db_path = os.path.join(application.static_folder, 'catalogue/db.json')
+    db = json.loads(open(db_path, 'r').read())
+    return render_template(
+        'index.html',
+        links=db,
+        promo=True
     )
 
 

@@ -111,18 +111,19 @@
             <form class="needs-validation" novalidate action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input type="hidden" name="cmd" value="_s-xclick">
               <input type="hidden" name="hosted_button_id" value="36QZXJW9M9XN4">
-              <select name="os0" class="form-control form-control-sm buy-form mb-1">
-                <option class="buy-form" value="Inscribed">Inscribed $35.00 USD</option>
-                <option class="buy-form" value="Not Inscribed">Not Inscribed $30.00 USD</option>
+              <select name="os0" class="form-control form-control-sm buy-form mb-1" style="display: none;">
+                {% if promo %}
+                  <option value="Pocket Wallet (discounted)" selected>Pocket Wallet (discounted) $15.00 USD</option>
+                {% else %}
+                  <option value="Pocket Wallet" selected>Pocket Wallet $30.00 USD</option>
+                {% endif %}
               </select>
-              <div class="inscription-div">
-                <input type="text" name="os1" class="form-control form-control-sm buy-form mb-1" placeholder="Inscription" maxlength="1" required>
-                <div class="invalid-feedback py-2">
-                  Please choose an inscription (1 character only)
-                </div>
-              </div>
               <input type="hidden" name="os2" value="{{ link.colour_name }}">
               <input type="hidden" name="currency_code" value="USD">
+              <span class="text-dark border bg-light border-dark pull-right"
+                    style="padding: .25rem .5rem; font-size: .875rem; line-height: 1.5;">
+                ${% if promo %}15{% else %}30{% endif %}
+              </span>
               <button type="submit" class="btn btn-dark btn-sm button-link rounded-0 pull-right" disabled>BUY NOW</button>
             </form>
           </div>
@@ -160,6 +161,9 @@
     </div>
   </div>
 </div>
+{% if promo %}
+  <div class="watermarked" data-watermark=" PROMO "></div>
+{% endif %}
 
 <!-- Le javascript
 ================================================== -->

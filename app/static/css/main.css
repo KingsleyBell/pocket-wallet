@@ -106,3 +106,23 @@ body {
         right: 3rem;
     }
 }
+
+.watermarked::before {
+    position: fixed;
+    top: -75%;
+    left: -75%;
+
+    display: block;
+    width: 300%;
+    height: 300%;
+
+    transform: rotate(-45deg);
+    content: attr(data-watermark);
+
+    font-size: 30px;
+    opacity: 0.15;
+    line-height: 4em;
+    letter-spacing: 2px;
+    color: #444;
+    z-index:-1;
+}

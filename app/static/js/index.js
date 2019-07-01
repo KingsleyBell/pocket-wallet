@@ -22,32 +22,7 @@ $(document).ready(function() {
     $(".carousel-item[index=" + index + "]").addClass("active");
   });
 
-  $("select[name='os0']").change(function(e) {
-    var val = $(this).find(":selected").val();
-    if (val === "Inscribed") {
-      $("input[name='os1']").show();
-      $(".inscription-div").show();
-      $("input[name='os1']").prop("required", true);
-    }
-    else {
-      $("input[name='os1']").hide();
-      $(".inscription-div").hide();
-      $("input[name='os1']").prop("required", false);
-    }
-  });
-
-  var forms = document.getElementsByClassName('needs-validation');
-
-  var validation = Array.prototype.filter.call(forms, function(form) {
-    form.addEventListener('submit', function(event) {
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      else {
-        $(".invalid-feedback").hide();
-      }
-      form.classList.add('was-validated');
-    }, false);
+  Array.from(document.querySelectorAll('.watermarked')).forEach(function(el) {
+        el.dataset.watermark = (el.dataset.watermark + ' ').repeat(10000);
   });
 });
