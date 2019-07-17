@@ -21,6 +21,12 @@ body {
     width: 100%;
 }
 
+.navbar-toggler {
+    position: absolute;
+    top: 0;
+    right: 0;"
+}
+
 .navbar-options {
     padding: 1.5rem 0;
     max-width: 120px;
@@ -86,9 +92,13 @@ body {
         padding-left: 1rem;
         padding-top: 1rem;
     }
+
+    .carousel {
+        padding-top: 1rem;
+    }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     /* For desktop: */
     .sidebar-sticky {
         position: fixed;
