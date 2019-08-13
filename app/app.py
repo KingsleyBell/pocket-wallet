@@ -138,13 +138,7 @@ def delete_order():
 
 @application.route('/notify-payment/', methods=['POST'])
 def notify_payment():
-    data = request.get_json()
-    form_data = request.form
-    jsondata = request.json
-
-    application.logger.error(data)
-    application.logger.error(form_data)
-    application.logger.error(json_data)
+    data = request.form
 
     mongo.db.orderConfirmations.insert_one(data)
 
