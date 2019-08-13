@@ -100,7 +100,8 @@ body {
     }
 
     .carousel {
-        padding-top: 1rem;
+        position: absolute;
+        top: 50px;
     }
 }
 

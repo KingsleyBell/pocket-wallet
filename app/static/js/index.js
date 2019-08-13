@@ -1,3 +1,5 @@
+var deleteOrderUrl;
+
 $(document).ready(function() {
   // Activate buy now button after page load
   $(".button-link").prop("disabled", false);
@@ -57,10 +59,42 @@ $(document).ready(function() {
         {
           $.each(data, function (key, val) {
             $("#za-order-confirmation-form input[name=" + key + "]").val(val);
-            console.log(key, val);
           });
-          $('#orderConfirmModal').modal();
+
+          $("#confirm-list").html("");
+          $("#za-order-form input, #za-order-form select").each(function(i, formInput){
+            $("#confirm-list").append(
+              "<li class='list-group-item'>" +
+              " <b style='text-transform: capitalize;'>" + formInput.name + "</b> " +
+              " <span id='" + formInput.name +  "-span' class='pull-right'>" +
+                  formInput.value +
+              " </span>" +
+              "</li>"
+            );
+          });
+          var totalCost = parseInt($("#za-order-form input[name=quantity]").val()) * 150;
+          $("#cost-span").text("R" + totalCost);
+          $("#confirm-list").append(
+            "<li class='list-group-item pt-3' style='font-size: 1.5rem;'>" +
+            " <b style='text-transform: capitalize;'><u>Price</u></b> " +
+            " <span id='price-span' class='pull-right'>R" + totalCost + "</span>" +
+            "</li>"
+          );
+          $('#orderModal').modal('hide');
+          setTimeout(function(){ $('#orderConfirmModal').modal(); }, 500);
         }
       });
+  });
+
+  // Edit order details
+  $("#order-back-btn").click(function(e) {
+    var paymentId = $("#za-order-confirmation-form input[name='m_payment_id']").val();
+    $.ajax({
+      type: "POST",
+      url: deleteOrderUrl,
+      data: {'payment_id': paymentId},
+      success: function (data) {console.log('Successfully deleted ' + paymentId);}
+    });
+    setTimeout(function(){ $('#orderModal').modal('show'); }, 500);
   });
 });

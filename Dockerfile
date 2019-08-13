@@ -1,12 +1,10 @@
 FROM python:3.6
 ADD ./app /app
-
-COPY requirements.txt /tmp/
-#COPY data/letsencrypt /etc/letsencrypt
+ADD ./requirements.txt /app/requirements.txt
 
 # upgrade pip and install required python packages
 RUN pip install -U pip
-RUN pip install -r /tmp/requirements.txt
+RUN pip install -r /app/requirements.txt
 
 WORKDIR /app
 EXPOSE 8002
