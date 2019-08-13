@@ -148,7 +148,7 @@ def notify_payment():
         order_update = {"$set": {'paid': True}}
         application.logger.error(f'query: {order_query}. Update: {order_update}')
 
-        mongo.db.orderConfirmations.update_one(order_query, order_update)
+        mongo.db.orders.update_one(order_query, order_update)
 
     mongo.db.orderConfirmations.insert_one(data)
 
