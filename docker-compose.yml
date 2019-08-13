@@ -6,8 +6,6 @@ services:
     hostname: web
     ports:
       - "8002:8002"
-    env_file:
-      - "envfile"
 networks:
   default:
     external:
