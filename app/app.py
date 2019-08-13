@@ -138,7 +138,15 @@ def delete_order():
 
 @application.route('/notify-payment/', methods=['POST'])
 def notify_payment():
-    data = request.form
+    data = request.form.to_dict()
+
+    successful_payment = data['payment_status'] == 'COMPLETE'
+
+    if successful_payment:
+        order_query = {'payment_id': data['m_payment_id']}
+        order_update = {"$set": {'paid': True}}
+
+        mongo.db.orderConfirmations.update_one(order_query, order_update)
 
     mongo.db.orderConfirmations.insert_one(data.to_dict())
 
