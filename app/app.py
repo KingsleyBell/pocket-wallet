@@ -130,7 +130,6 @@ def order_complete():
 @application.route('/delete-order/', methods=['POST'])
 def delete_order():
     data = request.form
-    delete_query = {'payment_id': data['payment_id']}
 
     mongo.db.orders.delete_one(data)
 
@@ -140,6 +139,12 @@ def delete_order():
 @application.route('/notify-payment/', methods=['POST'])
 def notify_payment():
     data = request.get_json()
+    form_data = request.form
+    jsondata = request.json
+
+    application.logger.error(data)
+    application.logger.error(form_data)
+    application.logger.error(json_data)
 
     mongo.db.orderConfirmations.insert_one(data)
 
