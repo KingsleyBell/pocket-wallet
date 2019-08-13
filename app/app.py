@@ -140,7 +140,7 @@ def delete_order():
 def notify_payment():
     data = request.form
 
-    mongo.db.orderConfirmations.insert_one(data)
+    mongo.db.orderConfirmations.insert_one(data.to_dict())
 
     return jsonify({'ok': True, 'message': 'Order success'}), 200
 
