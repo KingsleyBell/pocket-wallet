@@ -156,6 +156,7 @@ def notify_payment():
 
 
 @application.route('/order/', methods=['GET'])
+@requires_auth
 def order():
     if request.method == 'GET':
         orders = [o for o in mongo.db.orders.find()]
