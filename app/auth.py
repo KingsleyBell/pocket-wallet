@@ -2,7 +2,7 @@ from functools import wraps
 
 from flask import request, Response
 
-from app import application
+from app.app import application
 from settings import PASSWORD, USERNAME
 
 
