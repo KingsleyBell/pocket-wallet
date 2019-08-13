@@ -1,5 +1,3 @@
-var deleteOrderUrl;
-
 $(document).ready(function() {
   // Activate buy now button after page load
   $(".button-link").prop("disabled", false);
