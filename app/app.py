@@ -148,7 +148,7 @@ def notify_payment():
 
         mongo.db.orderConfirmations.update_one(order_query, order_update)
 
-    mongo.db.orderConfirmations.insert_one(data.to_dict())
+    mongo.db.orderConfirmations.insert_one(data)
 
     return jsonify({'ok': True, 'message': 'Order success'}), 200
 
