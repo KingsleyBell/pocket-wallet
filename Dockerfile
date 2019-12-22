@@ -7,7 +7,7 @@ RUN pip install -U pip
 RUN pip install -r /app/requirements.txt
 
 WORKDIR /app
-EXPOSE 8002
+EXPOSE 8005
 CMD ["gunicorn", "-b", "0.0.0.0:8002", "app"]
 
 

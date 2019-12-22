@@ -5,7 +5,7 @@ services:
     build: ./
     hostname: web
     ports:
-      - "8002:8002"
+      - "8005:8005"
 networks:
   default:
     external:
